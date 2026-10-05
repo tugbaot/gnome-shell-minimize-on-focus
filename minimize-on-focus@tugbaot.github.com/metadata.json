@@ -1,0 +1,7 @@
+{
+    "uuid": "minimize-on-focus@example.com",
+    "name": "Minimize on Focus",
+    "description": "Minimize other normal windows when a window receives focus",
+    "version": 1,
+    "shell-version": ["50"]
+}
