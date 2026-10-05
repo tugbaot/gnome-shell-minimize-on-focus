@@ -1,7 +1,8 @@
 {
-    "uuid": "minimize-on-focus@example.com",
+    "uuid": "minimize-on-focus@tugbaot.github.com",
     "name": "Minimize on Focus",
     "description": "Minimize other normal windows when a window receives focus",
     "version": 1,
-    "shell-version": ["50"]
+    "shell-version": ["50"],
+    "url": "https://github.com/tugbaot/gnome-shell-minimize-on-focus"
 }
