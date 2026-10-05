@@ -9,8 +9,11 @@ export default class MinimizeOnFocusExtension extends Extension {
         // Applications which trigger the minimize behaviour.
         this._triggerApps = [
             'nemo',
-            'sakura',
-            'vivaldi',
+        ];
+
+        // Applications which should never be minimized.
+        this._excludedApps = [
+            'mpv',
         ];
 
         this._focusChangedId =
@@ -68,6 +71,10 @@ export default class MinimizeOnFocusExtension extends Extension {
                 if (window.get_workspace() !== workspace)
                     continue;
 
+                // Never minimise excluded applications.
+                if (this._isExcludedApplication(window))
+                    continue;
+
                 // Don't bother with already-minimized windows.
                 if (window.minimized)
                     continue;
@@ -86,5 +93,14 @@ export default class MinimizeOnFocusExtension extends Extension {
             return false;
 
         return this._triggerApps.includes(wmClass.toLowerCase());
+    }
+
+    _isExcludedApplication(window) {
+        const wmClass = window.get_wm_class();
+
+        if (!wmClass)
+            return false;
+
+        return this._excludedApps.includes(wmClass.toLowerCase());
     }
 }
