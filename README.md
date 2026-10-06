@@ -11,7 +11,7 @@ To install, just download the zip and unpack to  `~/local/share/gnome-shell/exte
 ## Config
 Nothing fancy, just edit the `extension.js` file as follows:
 
-### To include an app to trigger others to be minimized
+#### To include an app to trigger others to be minimized
 
 In the `this._triggerApps` function, just add the apps you want to trigger others to be minimized, e.g:
 
@@ -24,13 +24,14 @@ this._triggerApps = [
 ]
 ```
 
-### To exclude an app to trigger others to be minimized
+#### To exclude an app to trigger others to be minimized
 
 In the `this._excludedApps` fucntion, just add the apps you want to NOT minimize, e.g:
 ```
 // Applications which should never be minimized.
 this._excludedApps = [
     'mpv',
+    'whatever-app-here',
 ];
 ```
 
