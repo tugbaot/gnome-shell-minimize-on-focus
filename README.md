@@ -8,6 +8,32 @@ If there are apps you want to exclude (and not get minimized) just add them in `
 ## Install
 To install, just download the zip and unpack to  `~/local/share/gnome-shell/extensions`
 
+## Config
+Nothing fancy, just edit the `extension.js` file as follows:
+
+### To include an app to trigger others to be minimized
+
+In the `this._triggerApps` function, just add the apps you want to trigger others to be minimized, e.g:
+
+```
+// Applications which trigger the minimize behaviour.
+this._triggerApps = [
+    'nemo',
+    'sakura',
+    'whatever-app-here',
+]
+```
+
+### To exclude an app to trigger others to be minimized
+
+In the `this._excludedApps` fucntion, just add the apps you want to NOT minimize, e.g:
+```
+// Applications which should never be minimized.
+this._excludedApps = [
+    'mpv',
+];
+```
+
 
 
 
