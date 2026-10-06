@@ -9,6 +9,7 @@ export default class MinimizeOnFocusExtension extends Extension {
         // Applications which trigger the minimize behaviour.
         this._triggerApps = [
             'nemo',
+            'sakura',
         ];
 
         // Applications which should never be minimized.
@@ -46,6 +47,10 @@ export default class MinimizeOnFocusExtension extends Extension {
 
         // Only act on normal application windows.
         if (focusedWindow.get_window_type() !== Meta.WindowType.NORMAL)
+            return;
+
+        // Only act when the trigger application is fully maximized.
+        if (!focusedWindow.is_maximized())
             return;
 
         const workspace = focusedWindow.get_workspace();
