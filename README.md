@@ -26,7 +26,7 @@ this._triggerApps = [
 
 #### To exclude an app to trigger others to be minimized
 
-In the `this._excludedApps` fucntion, just add the apps you want to NOT minimize, e.g:
+In the `this._excludedApps` function, just add the apps you want to NOT minimize, e.g:
 ```
 // Applications which should never be minimized.
 this._excludedApps = [
